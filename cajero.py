@@ -122,6 +122,10 @@ def run():
                     print("El valor ingresado no es el correcto")
             system ("cls")
             opcion = mostrar_menu_principal(contador)
+        elif opcion == "s":
+            print('GRACIAS POR SU PREFERENCIA')
+            os.system("pause")
+            #quit()
         else:
             system ('cls')
             print('Elija otra opcion')
