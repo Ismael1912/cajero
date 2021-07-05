@@ -6,8 +6,8 @@ from os import system
 import re
 
 def saldo_final(saldo_inicial, saldo_a_retirar):
-    saldo1 = saldo_inicial - saldo_a_retirar
-    return saldo1
+    saldo_1 = saldo_inicial - saldo_a_retirar
+    return saldo_1
     
 
 def mostrar_menu_principal(contador):
@@ -100,7 +100,28 @@ def run():
             opcion = mostrar_menu_principal(contador)
         elif opcion == 'd':
             system ("cls")
-
+            while True:
+                try:
+                    cantidad_a_depositar = int(input('Ingrese la cantidad a depositar: '))
+                    if cantidad_a_depositar < 0:
+                        system ("cls")
+                        print('La cantidad no puede ser negativa')
+                        continue
+                    elif cantidad_a_depositar == 0:
+                        system ("cls")
+                        print('La cantidad no puede ser de 0')
+                        continue
+                    else:
+                        system ("cls")
+                        saldo = saldo + cantidad_a_depositar
+                        print(f'Su saldo es de ${saldo}')
+                        os.system("pause")
+                        break
+                except:
+                    system ("cls")
+                    print("El valor ingresado no es el correcto")
+            system ("cls")
+            opcion = mostrar_menu_principal(contador)
         else:
             system ('cls')
             print('Elija otra opcion')
